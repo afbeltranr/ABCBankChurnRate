@@ -1,0 +1,6 @@
+google-cloud-bigquery
+pandas
+pyarrow
+kaggle
+jupyter
+pytest
