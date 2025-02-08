@@ -1,6 +1,9 @@
-google-cloud-bigquery
-pandas
-pyarrow
-kaggle
-jupyter
-pytest
+google-cloud-bigquery # for bigquery
+pandas # for data manipulation
+pyarrow # for parquet file
+kaggle # for downloading data from kaggle
+jupyter # for jupyter notebook
+pytest # for testing
+db-dtypes # for data type conversion
+google-cloud-bigquery-storage # for more efficient data transfer
+dotenv # for environment variables
