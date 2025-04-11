@@ -7,3 +7,4 @@ pytest # for testing
 db-dtypes # for data type conversion
 google-cloud-bigquery-storage # for more efficient data transfer
 dotenv # for environment variables
+pandas-gbq # for pandas to bigquery
