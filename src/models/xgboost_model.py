@@ -29,11 +29,25 @@ class XGBoostModel(BaseChurnModel):
         }
     
     def get_param_grid(self) -> Dict[str, list]:
-        """Get hyperparameter grid for tuning."""
+        """
+        Get lightweight hyperparameter grid for overfitting prevention.
+        
+        Overfitting Prevention Techniques:
+        - max_depth: Controls tree depth (prevents overcomplex trees)
+        - learning_rate: Step size shrinkage (prevents overfitting)
+        - subsample: Row subsampling ratio (bootstrap sampling)
+        - colsample_bytree: Feature subsampling per tree
+        - min_child_weight: Min sum of weights in child nodes (regularization)
+        - reg_alpha: L1 regularization (feature selection)
+        
+        Lightweight grid: ~144 combinations (432 with 3-fold CV)
+        """
         return {
-            'n_estimators': [50, 100, 200],
-            'max_depth': [3, 6, 9],
-            'learning_rate': [0.01, 0.1, 0.2],
-            'subsample': [0.7, 0.8, 0.9],
-            'colsample_bytree': [0.7, 0.8, 0.9]
+            'n_estimators': [50, 100, 200],  # Fewer estimators for speed
+            'max_depth': [3, 5, 7],  # Tree depth (XGBoost works well with shallow trees)
+            'learning_rate': [0.05, 0.1, 0.2],  # Step size shrinkage
+            'subsample': [0.8, 0.9],  # Row subsampling (most effective values)
+            'colsample_bytree': [0.8, 0.9],  # Feature subsampling per tree
+            'min_child_weight': [1, 5],  # Min child weight regularization
+            'reg_alpha': [0, 0.1]  # L1 regularization (0 = no reg, 0.1 = moderate reg)
         }

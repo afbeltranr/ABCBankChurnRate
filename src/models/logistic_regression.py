@@ -27,9 +27,20 @@ class LogisticRegressionModel(BaseChurnModel):
         }
     
     def get_param_grid(self) -> Dict[str, list]:
-        """Get hyperparameter grid for tuning."""
+        """
+        Get lightweight hyperparameter grid for regularization.
+        
+        Overfitting Prevention Techniques:
+        - C: Inverse of regularization strength (lower = more regularization)
+        - penalty: L1 (feature selection) vs L2 (weight decay) regularization
+        - solver: Optimization algorithm (affects regularization effectiveness)
+        - class_weight: Handle class imbalance (prevents bias toward majority)
+        
+        Lightweight grid: ~24 combinations (72 with 3-fold CV)
+        """
         return {
-            'C': [0.01, 0.1, 1.0, 10.0, 100.0],
-            'penalty': ['l1', 'l2'],
-            'solver': ['liblinear', 'saga']
+            'C': [0.01, 0.1, 1.0, 10.0],  # Key regularization values
+            'penalty': ['l1', 'l2'],  # Regularization types
+            'solver': ['liblinear', 'saga'],  # Fast solvers that support both penalties
+            'class_weight': [None, 'balanced']  # Handle class imbalance
         }

@@ -21,7 +21,14 @@ Check the `demo_results/` folder for:
 - 📄 Executive summary for business stakeholders
 - 📊 Performance comparison charts (real vs synthetic if applicable)
 - 📈 Feature importance analysis
-- 📋 Technical metrics reportitional ML algorithms
+- 📋 Technical metrics report
+
+**Plus comprehensive visualizations in `visualizations/` folder:**
+- 🔍 Exploratory data analysis plots
+- 📊 Model performance comparisons
+- 🎯 ROC curves and performance metrics
+- 🔗 Feature correlation heatmaps
+- ⚡ Training time vs performance analysisitional ML algorithms
 - `xgboost`: Gradient boosting
 - `pandas`: Data manipulation
 - **`kaggle`**: Real dataset API integration ⭐
@@ -72,6 +79,15 @@ python main.py --download-new
 
 *Results from 10,000 real customer records with 20.37% churn rate*
 
+### 📊 Churn Distribution Analysis
+![Churn Distribution](visualizations/churn_distribution.png)
+
+### 👥 Demographic Insights  
+![Demographic Analysis](visualizations/demographic_analysis.png)
+
+### 💰 Financial Behavior Patterns
+![Financial Analysis](visualizations/financial_analysis.png)
+
 ## 📈 Real vs Synthetic Data Performance Comparison
 
 | Model | F1-Score (Real) | F1-Score (Synthetic) | Improvement |
@@ -88,6 +104,15 @@ python main.py --download-new
 - 📊 **Average improvement: +10.4%** in F1-score
 - 🚀 **Ensemble methods benefit most** from real-world patterns
 - ⚡ **5x more training data** (10,000 vs 2,000 samples) enables better learning
+
+### 🎯 Model Performance Comparison
+![Model Comparison](visualizations/model_comparison.png)
+
+### ⚡ Performance vs Training Time Analysis
+![Time vs Performance](visualizations/time_vs_performance.png)
+
+### 📈 ROC Curve Analysis
+![ROC Curves](visualizations/roc_curves.png)
 
 ## 🏗️ Project Structure
 
@@ -112,9 +137,13 @@ ABCBankChurnRate/
 │   │   ├── tabm.py         # TabM implementation
 │   │   └── trainer.py      # Training pipeline
 │   └── 📁 utils/          # Utilities
-│       └── reporting.py    # Stakeholder reports
+│       ├── reporting.py    # Stakeholder reports
+│       └── visualizations.py # Chart generation
 ├── 📁 tests/              # Unit tests
+├── 📁 visualizations/     # Generated plots & charts
 ├── demo.py                # Quick demo script
+├── generate_visualizations.py # Visualization generator
+├── hyperparameter_tuning_demo.py # HP tuning demo
 ├── main.py                # Production pipeline
 └── requirements.txt       # Dependencies
 ```
@@ -148,6 +177,13 @@ ABCBankChurnRate/
 - ✅ **Error Handling**: Robust error management
 - ✅ **Documentation**: Complete API documentation
 
+### 📊 Comprehensive Visualizations
+- ✅ **EDA Visualizations**: Churn distribution, demographics, financial patterns
+- ✅ **Correlation Analysis**: Feature relationships and multicollinearity detection
+- ✅ **Model Performance**: Comparison charts, ROC curves, performance radar
+- ✅ **Hyperparameter Analysis**: Parameter impact visualization
+- ✅ **Time vs Performance**: Training efficiency analysis
+
 ## 📈 Model Comparison
 
 ### Traditional ML Models
@@ -162,6 +198,17 @@ ABCBankChurnRate/
   - Multi-layer perceptron with proper scaling
   - Adaptive learning rates
   - Early stopping to prevent overfitting
+
+## 🔍 Data Analysis & Feature Engineering
+
+### 🔗 Feature Correlation Analysis
+![Correlation Heatmap](visualizations/correlation_heatmap.png)
+
+### 📊 Feature Distribution Analysis
+![Feature Distributions](visualizations/feature_distributions.png)
+
+### 🎛️ Hyperparameter Tuning Insights
+![Hyperparameter Analysis](visualizations/hyperparameter_analysis.png)
 
 ## 🎯 Business Impact
 
@@ -195,6 +242,22 @@ python -m pytest tests/test_pipeline.py -v
 # Run with coverage
 python -m pytest tests/ --cov=src
 ```
+
+## 📊 Generate Visualizations
+
+```bash
+# Generate comprehensive EDA and model visualizations
+python generate_visualizations.py
+
+# Hyperparameter tuning with visualizations
+python hyperparameter_tuning_demo.py
+```
+
+**Generated visualizations include:**
+- 🔍 **EDA plots**: Churn distribution, demographics, financial patterns
+- 📊 **Model comparisons**: Performance metrics, ROC curves
+- 🎯 **Training analysis**: Time vs performance, hyperparameter impact
+- 🔗 **Feature analysis**: Correlations, distributions
 
 ## ⚙️ Configuration
 

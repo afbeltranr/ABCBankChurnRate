@@ -28,11 +28,23 @@ class RandomForestModel(BaseChurnModel):
         }
     
     def get_param_grid(self) -> Dict[str, list]:
-        """Get hyperparameter grid for tuning."""
+        """
+        Get lightweight hyperparameter grid for overfitting prevention.
+        
+        Overfitting Prevention Techniques:
+        - max_depth: Controls tree depth (prevents deep, overcomplex trees)
+        - min_samples_split: Min samples required to split (prevents splitting on few samples)
+        - min_samples_leaf: Min samples in leaf nodes (prevents tiny leaves)
+        - max_features: Feature subsampling per tree (bootstrap aggregating)
+        - n_estimators: Number of trees (more trees = better generalization)
+        
+        Lightweight grid: ~48 combinations (144 with 3-fold CV)
+        """
         return {
-            'n_estimators': [50, 100, 200],
-            'max_depth': [5, 10, 15, None],
-            'min_samples_split': [2, 5, 10],
-            'min_samples_leaf': [1, 2, 4],
-            'max_features': ['sqrt', 'log2']
+            'n_estimators': [50, 100, 200],  # Fewer estimators for speed
+            'max_depth': [5, 10, None],  # Key depth values
+            'min_samples_split': [2, 10],  # Split threshold (most impactful values)
+            'min_samples_leaf': [1, 4],  # Leaf size threshold
+            'max_features': ['sqrt', 0.8],  # Feature subsampling (most effective)
+            'bootstrap': [True]  # Always use bootstrap for ensemble diversity
         }

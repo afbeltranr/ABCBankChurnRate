@@ -45,18 +45,32 @@ class TabMModel(BaseChurnModel):
         }
     
     def get_param_grid(self) -> Dict[str, list]:
-        """Get hyperparameter grid for tuning."""
+        """
+        Get comprehensive hyperparameter grid for neural network overfitting prevention.
+        
+        Overfitting Prevention Techniques:
+        - hidden_layer_sizes: Network architecture (capacity control)
+        - alpha: L2 regularization strength (weight decay)
+        - learning_rate_init: Initial learning rate (convergence control)
+        - batch_size: Mini-batch size (regularization through noise)
+        - early_stopping: Built-in (stops when validation doesn't improve)
+        - dropout: Would be ideal but not available in MLPClassifier
+        """
         return {
             'hidden_layer_sizes': [
-                (64, 32),
-                (128, 64),
-                (128, 64, 32),
-                (256, 128, 64)
+                (64, 32),           # Small network
+                (128, 64),          # Medium network  
+                (128, 64, 32),      # Deep network
+                (256, 128, 64),     # Large network
+                (128, 128, 64),     # Wide network
+                (64, 64, 32, 16)    # Very deep network
             ],
-            'activation': ['relu', 'tanh'],
-            'alpha': [0.0001, 0.001, 0.01],
-            'learning_rate_init': [0.001, 0.01, 0.1],
-            'solver': ['adam', 'lbfgs']
+            'activation': ['relu', 'tanh', 'logistic'],  # Activation functions
+            'alpha': [0.0001, 0.001, 0.01, 0.1],  # L2 regularization strength
+            'learning_rate_init': [0.0001, 0.001, 0.01],  # Initial learning rate
+            'solver': ['adam', 'lbfgs'],  # Optimization algorithms
+            'batch_size': [32, 64, 128, 'auto'],  # Mini-batch sizes
+            'learning_rate': ['constant', 'adaptive']  # Learning rate schedule
         }
     
     def fit(self, X: pd.DataFrame, y: pd.Series, **params) -> 'TabMModel':
