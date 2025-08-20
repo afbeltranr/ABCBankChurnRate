@@ -1,27 +1,27 @@
 
 # CUSTOMER CHURN PREDICTION - EXECUTIVE SUMMARY
-Generated on: 2025-08-20 14:15:34
+Generated on: 2025-08-20 05:18:40
 
 ## KEY FINDINGS
 
 ### Best Performing Model: XGBoost
-- **Accuracy**: 86.2% of predictions are correct
-- **Precision**: 85.2% of predicted churners actually churn
-- **Recall**: 86.2% of actual churners are identified
-- **F1-Score**: 0.848 (balanced performance metric)
-- **ROC-AUC**: 0.857 (model discrimination ability)
+- **Accuracy**: 77.2% of predictions are correct
+- **Precision**: 66.9% of predicted churners actually churn
+- **Recall**: 77.2% of actual churners are identified
+- **F1-Score**: 0.695 (balanced performance metric)
+- **ROC-AUC**: 0.583 (model discrimination ability)
 
 ### Dataset Overview
 - **Total Customers**: 10,000
-- **Churn Rate**: 20.4%
+- **Churn Rate**: 21.4%
 - **Features Used**: 11
 
 ## BUSINESS IMPACT
 
 ### What This Means for the Business:
-1. **Accuracy of 86.2%** means the model correctly identifies customer behavior in approximately 86% of cases
-2. **Precision of 85.2%** means that when the model predicts a customer will churn, it's correct 85% of the time
-3. **Recall of 86.2%** means the model catches 86% of customers who actually churn
+1. **Accuracy of 77.2%** means the model correctly identifies customer behavior in approximately 77% of cases
+2. **Precision of 66.9%** means that when the model predicts a customer will churn, it's correct 67% of the time
+3. **Recall of 77.2%** means the model catches 77% of customers who actually churn
 
 ### Recommended Actions:
 1. **Implement the XGBoost model** for churn prediction
@@ -33,12 +33,12 @@ Generated on: 2025-08-20 14:15:34
 
 The following models were evaluated:
 
-- **LogisticRegression**: F1-Score 0.769, ROC-AUC 0.778
-- **NaiveBayes**: F1-Score 0.804, ROC-AUC 0.797
-- **RandomForest**: F1-Score 0.843, ROC-AUC 0.859
-- **XGBoost**: F1-Score 0.848, ROC-AUC 0.857
-- **AdaBoost**: F1-Score 0.834, ROC-AUC 0.843
-- **TabM**: F1-Score 0.843, ROC-AUC 0.856
+- **LogisticRegression**: F1-Score 0.692, ROC-AUC 0.632
+- **NaiveBayes**: F1-Score 0.695, ROC-AUC 0.634
+- **RandomForest**: F1-Score 0.695, ROC-AUC 0.618
+- **XGBoost**: F1-Score 0.695, ROC-AUC 0.583
+- **AdaBoost**: F1-Score 0.692, ROC-AUC 0.635
+- **TabM**: F1-Score 0.692, ROC-AUC 0.627
 
 ## NEXT STEPS
 

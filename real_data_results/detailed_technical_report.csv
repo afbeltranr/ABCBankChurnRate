@@ -1,0 +1,7 @@
+Model,Test_Accuracy,Test_Precision,Test_Recall,Test_F1_Score,Test_ROC_AUC,Val_Accuracy,Val_F1_Score,Training_Time_Seconds,Overfit_Risk
+LogisticRegression,0.7860,0.6178,0.7860,0.6918,0.6317,0.7860,0.6918,0.02,Low
+NaiveBayes,0.7830,0.6853,0.7830,0.6949,0.6343,0.7805,0.6945,0.00,Low
+RandomForest,0.7860,0.7255,0.7860,0.6946,0.6175,0.7845,0.6929,0.56,Low
+XGBoost,0.7725,0.6686,0.7725,0.6952,0.5831,0.7780,0.7006,0.11,Low
+AdaBoost,0.7850,0.6714,0.7850,0.6923,0.6350,0.7860,0.6918,0.22,Low
+TabM,0.7860,0.6178,0.7860,0.6918,0.6274,0.7860,0.6918,0.55,Low
