@@ -1,0 +1,4 @@
+Model,Test_Accuracy,Test_Precision,Test_Recall,Test_F1_Score,Test_ROC_AUC,Val_Accuracy,Val_F1_Score,Training_Time_Seconds,Overfit_Risk
+LogisticRegression,0.8200,0.7651,0.8200,0.7479,0.6615,0.8200,0.7500,0.00,Low
+RandomForest,0.8150,0.6717,0.8150,0.7364,0.6419,0.8250,0.7528,0.20,Low
+XGBoost,0.8025,0.7295,0.8025,0.7491,0.6226,0.8125,0.7605,0.07,Low

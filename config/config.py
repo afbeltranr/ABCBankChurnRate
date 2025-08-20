@@ -1,6 +1,6 @@
 """Configuration settings for the Bank Churn Prediction project."""
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List, Optional
 import os
 
@@ -19,21 +19,21 @@ class DataConfig:
     id_column: str = "customer_id"
     
     # Feature groups
-    continuous_features: List[str] = [
+    continuous_features: List[str] = field(default_factory=lambda: [
         "credit_score",
         "age",
         "estimated_salary",
         "balance"
-    ]
+    ])
     
-    categorical_features: List[str] = [
+    categorical_features: List[str] = field(default_factory=lambda: [
         "gender",
         "country",
         "credit_card",
         "active_member",
         "products_number",
         "tenure"
-    ]
+    ])
     
     # Feature engineering settings
     age_transform: str = "log"  # Options: 'log', 'none'
@@ -58,8 +58,8 @@ class ModelConfig:
 
 @dataclass
 class ProjectConfig:
-    data: DataConfig = DataConfig()
-    model: ModelConfig = ModelConfig()
+    data: DataConfig = field(default_factory=DataConfig)
+    model: ModelConfig = field(default_factory=ModelConfig)
     
     # Paths
     base_dir: str = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

@@ -6,5 +6,12 @@ jupyter # for jupyter notebook
 pytest # for testing
 db-dtypes # for data type conversion
 google-cloud-bigquery-storage # for more efficient data transfer
-dotenv # for environment variables
+python-dotenv # for environment variables
 pandas-gbq # for pandas to bigquery
+numpy # for numerical operations
+matplotlib # for plotting
+seaborn # for statistical visualization
+scikit-learn # for machine learning
+xgboost # for gradient boosting
+plotly # for interactive plots
+ipywidgets # for jupyter widgets
