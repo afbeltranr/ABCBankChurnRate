@@ -88,8 +88,8 @@ def main():
     
     print("\nTraining models (demo mode - no hyperparameter tuning)...")
     
-    # Train a subset of models for demo
-    demo_models = ['LogisticRegression', 'RandomForest', 'XGBoost']
+    # Train all 6 models for comprehensive comparison
+    demo_models = ['LogisticRegression', 'NaiveBayes', 'RandomForest', 'XGBoost', 'AdaBoost', 'TabM']
     results = {}
     
     for model_name in demo_models:

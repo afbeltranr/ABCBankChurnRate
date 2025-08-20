@@ -1,15 +1,15 @@
 
 # CUSTOMER CHURN PREDICTION - EXECUTIVE SUMMARY
-Generated on: 2025-08-20 04:56:27
+Generated on: 2025-08-20 05:12:00
 
 ## KEY FINDINGS
 
-### Best Performing Model: XGBoost
-- **Accuracy**: 80.2% of predictions are correct
-- **Precision**: 72.9% of predicted churners actually churn
-- **Recall**: 80.2% of actual churners are identified
-- **F1-Score**: 0.749 (balanced performance metric)
-- **ROC-AUC**: 0.623 (model discrimination ability)
+### Best Performing Model: NaiveBayes
+- **Accuracy**: 80.8% of predictions are correct
+- **Precision**: 75.0% of predicted churners actually churn
+- **Recall**: 80.8% of actual churners are identified
+- **F1-Score**: 0.762 (balanced performance metric)
+- **ROC-AUC**: 0.647 (model discrimination ability)
 
 ### Dataset Overview
 - **Total Customers**: 2,000
@@ -19,12 +19,12 @@ Generated on: 2025-08-20 04:56:27
 ## BUSINESS IMPACT
 
 ### What This Means for the Business:
-1. **Accuracy of 80.2%** means the model correctly identifies customer behavior in approximately 80% of cases
-2. **Precision of 72.9%** means that when the model predicts a customer will churn, it's correct 73% of the time
-3. **Recall of 80.2%** means the model catches 80% of customers who actually churn
+1. **Accuracy of 80.8%** means the model correctly identifies customer behavior in approximately 81% of cases
+2. **Precision of 75.0%** means that when the model predicts a customer will churn, it's correct 75% of the time
+3. **Recall of 80.8%** means the model catches 81% of customers who actually churn
 
 ### Recommended Actions:
-1. **Implement the XGBoost model** for churn prediction
+1. **Implement the NaiveBayes model** for churn prediction
 2. **Focus retention efforts** on customers identified as high-risk
 3. **Monitor model performance** monthly and retrain quarterly
 4. **Investigate feature importance** to understand key churn drivers
@@ -34,12 +34,15 @@ Generated on: 2025-08-20 04:56:27
 The following models were evaluated:
 
 - **LogisticRegression**: F1-Score 0.748, ROC-AUC 0.661
+- **NaiveBayes**: F1-Score 0.762, ROC-AUC 0.647
 - **RandomForest**: F1-Score 0.736, ROC-AUC 0.642
 - **XGBoost**: F1-Score 0.749, ROC-AUC 0.623
+- **AdaBoost**: F1-Score 0.747, ROC-AUC 0.663
+- **TabM**: F1-Score 0.736, ROC-AUC 0.522
 
 ## NEXT STEPS
 
-1. **Deployment**: Integrate the XGBoost model into the customer management system
+1. **Deployment**: Integrate the NaiveBayes model into the customer management system
 2. **Monitoring**: Set up automated model performance tracking
 3. **Action Planning**: Develop targeted retention strategies based on model predictions
 4. **Continuous Improvement**: Schedule regular model retraining with new data

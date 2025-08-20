@@ -12,11 +12,11 @@
 3. **Presentation Plots**: 
    - demo_results/stakeholder_model_comparison.png, demo_results/best_model_metrics.png
 
-4. **Feature Importance Analysis**: demo_results/feature_importance_report_XGBoost.md
+4. **Feature Importance Analysis**: Not available
    - Key factors driving customer churn
 
-## Best Model: XGBoost
-- F1-Score: 0.749
-- ROC-AUC: 0.623
+## Best Model: NaiveBayes
+- F1-Score: 0.762
+- ROC-AUC: 0.647
 
-Generated on: 2025-08-20 04:56:28
+Generated on: 2025-08-20 05:12:01
